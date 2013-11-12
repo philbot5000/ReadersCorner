@@ -1,0 +1,40 @@
+{
+    "type": "jsonstore",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": true,
+        "model": "Episode",
+        "storeId": "MyJsonStore",
+        "designer|userClassName": "Episodes"
+    },
+    "designerId": "207d1c83-1ebd-454f-9494-1c79fd097293",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Ajax",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "https://dev-web.boisestate.edu/myboisestatemobile/Radio/getposts"
+            },
+            "designerId": "2dc4f5df-88b4-4f37-afb9-ebdda7ae49a9",
+            "cn": [
+                {
+                    "type": "Ext.data.reader.Json",
+                    "reference": {
+                        "name": "reader",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "designerId": "9233926d-7f3c-4e90-98d5-94b5cae338be"
+                }
+            ]
+        }
+    ]
+}

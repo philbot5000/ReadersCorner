@@ -1,0 +1,255 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "EpisodeInfo"
+    },
+    "designerId": "f6bcc596-78a2-4143-b9c3-0ab2d6393395",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEpisodeInfoShow",
+                "implHandler": [
+                    "component.on('hide', function() {",
+                    "    component.destroy();",
+                    "",
+                    "});"
+                ],
+                "name": "show",
+                "designer|targetType": "Ext.Panel",
+                "designer|controlQuery": "panel#episodeInfo"
+            },
+            "designerId": "200f178e-314f-4b16-959a-ccf79feb579c"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPlayButtonTap",
+                "implHandler": [
+                    "var playerControls = Ext.ComponentQuery.query('#playerControls')[0],",
+                    "    episodeInfo = Ext.ComponentQuery.query('#episodeInfo')[0],",
+                    "    main = Ext.getCmp('main');",
+                    "",
+                    "if(playerControls.isHidden()) {",
+                    "    playerControls.show();",
+                    "",
+                    "}",
+                    "",
+                    "if(button.getText() === 'Play') {",
+                    "",
+                    "    if(main.episode !== button.episode) {",
+                    "        if(typeof main.episode !== 'undefined') {",
+                    "            main.sound.pause();",
+                    "        }",
+                    "        main.episode = button.episode;",
+                    "        this.createAudio(button.episode);",
+                    "    } else {",
+                    "        main.episode = button.episode;",
+                    "        this.createAudio(button.episode);",
+                    "",
+                    "    }",
+                    "}",
+                    "",
+                    "main.sound.play();",
+                    "episodeInfo.hide();"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "button#playButton"
+            },
+            "designerId": "4e918649-7d93-4c74-b68d-65532f85cfa1"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onCloseButtonTap",
+                "implHandler": [
+                    "var episodeInfo = Ext.ComponentQuery.query('#episodeInfo')[0];",
+                    "",
+                    "episodeInfo.hide();"
+                ],
+                "name": "tap",
+                "designer|targetType": "Ext.Button",
+                "designer|controlQuery": "button#closeButton"
+            },
+            "designerId": "9885c6ee-8d8a-4c77-a38c-1816fe3169e2"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "createAudio",
+                "designer|params": [
+                    "episode"
+                ],
+                "implHandler": [
+                    "var main = Ext.getCmp('main'),",
+                    "    playButton = Ext.ComponentQuery.query('#playPause')[0],",
+                    "    me = this;",
+                    "",
+                    "playButton.setHtml('<div style=\"margin-top: 18px; margin-left: auto; margin-right: auto;\" class=\"x-loading-spinner\"><span class=\"x-loading-top\"></span><span class=\"x-loading-right\"></span><span class=\"x-loading-bottom\"></span><span class=\"x-loading-left\"></span></div>');",
+                    "",
+                    "",
+                    "main.sound = new Audio(episode.Podcast);",
+                    "this.setAudioListeners(main.sound);",
+                    "",
+                    "main.sound.play();",
+                    "/*",
+                    "main.sound = soundManager.createSound({",
+                    "id: 'episode',",
+                    "url: episode.mp3_url,",
+                    "whileplaying: function() {",
+                    "",
+                    "me.setSliderValue(this.position, this.duration);",
+                    "me.setTimeRemaining(this.duration, this.position);",
+                    "me.setTimeElapsed(this.position);",
+                    "},",
+                    "onplay: function() {",
+                    "playButton.setHtml('<img src=\"img/pause2.png\" width=\"100%\" />');",
+                    "},",
+                    "onpause: function() {",
+                    "playButton.setHtml('<img src=\"img/play2.png\" width=\"100%\" />');",
+                    "",
+                    "}",
+                    "});",
+                    "*/"
+                ]
+            },
+            "designerId": "995c24a9-8526-455b-80fe-312a584e520b"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "setAudioListeners",
+                "designer|params": [
+                    "sound"
+                ],
+                "implHandler": [
+                    "var playButton = Ext.ComponentQuery.query('#playPause')[0],",
+                    "    me = this;",
+                    "",
+                    "sound.addEventListener('playing', function(){",
+                    "    playButton.setHtml('<img src=\"img/pause2.png\" width=\"100%\" />');",
+                    "",
+                    "});",
+                    "sound.addEventListener('pause', function(){",
+                    "    playButton.setHtml('<img src=\"img/play2.png\" width=\"100%\" />');",
+                    "",
+                    "});",
+                    "",
+                    "sound.addEventListener('timeupdate', me.setTimeElapsed, false);",
+                    "sound.addEventListener('timeupdate', me.setTimeRemaining, false);",
+                    "sound.addEventListener('timeupdate', RC.app.setSliderValue, false);",
+                    "sound.addEventListener('progress', me.setPercentLoaded, false);"
+                ]
+            },
+            "designerId": "9eba2d5b-1b60-4cd4-a179-48f9e7c95c1a"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "setTimeElapsed",
+                "designer|params": [
+                    "e",
+                    "sound"
+                ],
+                "implHandler": [
+                    "var timeElapsed = Ext.ComponentQuery.query('#timeElapsed')[0],",
+                    "    main = Ext.getCmp('main'),",
+                    "    position = main.sound.currentTime;",
+                    "",
+                    "var s = Math.floor(position % 60),",
+                    "    seconds = s < 10 ? \"0\"+s : s;",
+                    "",
+                    "var m = Math.floor((position / 60) % 60),",
+                    "    minutes = m < 10 ? \"0\"+m : m;",
+                    "",
+                    "timeElapsed.setHtml(minutes+':'+seconds);"
+                ]
+            },
+            "designerId": "fd610e24-f9ec-4bad-8758-6bbf53c2742c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "setTimeRemaining",
+                "implHandler": [
+                    "var timeRemaining = Ext.ComponentQuery.query('#timeRemaining')[0],",
+                    "    main = Ext.getCmp('main'),",
+                    "    position = main.sound.currentTime,",
+                    "    duration = main.sound.duration,",
+                    "    timeLeft = duration - position;",
+                    "",
+                    "",
+                    "var s = Math.floor(timeLeft % 60) || 0,",
+                    "    seconds = s < 10 ? \"0\"+s : s;",
+                    "",
+                    "var m = Math.floor((timeLeft / 60) % 60) || 0,",
+                    "    minutes = m < 10 ? \"0\"+m : m;",
+                    "",
+                    "timeRemaining.setHtml('-'+minutes+':'+seconds);"
+                ]
+            },
+            "designerId": "f0ac3cf9-4fc0-4f26-b108-a6c92feac0b5"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "setPercentLoaded",
+                "designer|params": [
+                    "bytesLoaded, bytesTotal"
+                ],
+                "implHandler": [
+                    "var val = (100 / bytesTotal) * bytesLoaded || 0;",
+                    "",
+                    "console.log(bytesTotal);"
+                ]
+            },
+            "designerId": "5683ba02-6f10-4142-b16c-cbf43e57b088"
+        }
+    ]
+}

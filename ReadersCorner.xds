@@ -1,0 +1,120 @@
+{
+    "name": "ReadersCorner",
+    "settings": {
+        "spacesToIndent": 4,
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "urlPrefix": "",
+        "exportPath": "",
+        "buildShouldOverwriteIndex": true
+    },
+    "xdsVersion": "2.2.3",
+    "xdsBuild": 1044,
+    "schemaVersion": 1,
+    "upgradeVersion": 210000000503,
+    "framework": "touch22",
+    "topInstanceFileMap": {
+        "8d9642e3-a7e7-425e-aef7-17a0a4688c8f": {
+            "paths": [
+                "metadata/view/Main",
+                "app/view/override/Main.js",
+                "app/view/Main.js"
+            ],
+            "className": "Main"
+        },
+        "bd58f9df-916f-4b68-8283-b7183a8be660": {
+            "paths": [
+                "metadata/view/episodeList",
+                "app/view/override/episodeList.js",
+                "app/view/episodeList.js"
+            ],
+            "className": "episodeList"
+        },
+        "7285b05b-5f5d-44c3-a141-070bb7c251c9": {
+            "paths": [
+                "metadata/model/Episode",
+                "app/model/override/Episode.js",
+                "app/model/Episode.js"
+            ],
+            "className": "Episode"
+        },
+        "a98450b5-0fc2-4b4e-aaf0-9242063be9cd": {
+            "paths": [
+                "metadata/resource/Library"
+            ],
+            "className": "Library"
+        },
+        "207d1c83-1ebd-454f-9494-1c79fd097293": {
+            "paths": [
+                "metadata/store/Episodes",
+                "app/store/override/Episodes.js",
+                "app/store/Episodes.js"
+            ],
+            "className": "Episodes"
+        },
+        "cfe6cbc5-af7b-43e9-98c1-93cea994678c": {
+            "paths": [
+                "metadata/view/EpisodeInfo",
+                "app/view/override/EpisodeInfo.js",
+                "app/view/EpisodeInfo.js"
+            ],
+            "className": "EpisodeInfo"
+        },
+        "f6bcc596-78a2-4143-b9c3-0ab2d6393395": {
+            "paths": [
+                "metadata/controller/EpisodeInfo",
+                "app/controller/override/EpisodeInfo.js",
+                "app/controller/EpisodeInfo.js"
+            ],
+            "className": "EpisodeInfo"
+        },
+        "48fb1835-1a3f-42f1-a361-5343cec06f4f": {
+            "paths": [
+                "metadata/resource/js"
+            ],
+            "className": "js"
+        },
+        "9a97e669-2cb1-4e14-9d2f-6ad74a49af40": {
+            "paths": [
+                "metadata/controller/Player",
+                "app/controller/override/Player.js",
+                "app/controller/Player.js"
+            ],
+            "className": "Player"
+        },
+        "e69926a8-a608-4b86-9f00-d06438e26373": {
+            "paths": [
+                "metadata/view/Player",
+                "app/view/override/Player.js",
+                "app/view/Player.js"
+            ],
+            "className": "Player"
+        }
+    },
+    "viewOrderMap": {
+        "view": [
+            "8d9642e3-a7e7-425e-aef7-17a0a4688c8f",
+            "bd58f9df-916f-4b68-8283-b7183a8be660",
+            "cfe6cbc5-af7b-43e9-98c1-93cea994678c",
+            "e69926a8-a608-4b86-9f00-d06438e26373"
+        ],
+        "store": [
+            "207d1c83-1ebd-454f-9494-1c79fd097293"
+        ],
+        "controller": [
+            "f6bcc596-78a2-4143-b9c3-0ab2d6393395",
+            "9a97e669-2cb1-4e14-9d2f-6ad74a49af40"
+        ],
+        "model": [
+            "7285b05b-5f5d-44c3-a141-070bb7c251c9"
+        ],
+        "resource": [
+            "a98450b5-0fc2-4b4e-aaf0-9242063be9cd",
+            "48fb1835-1a3f-42f1-a361-5343cec06f4f"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

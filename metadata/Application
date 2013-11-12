@@ -1,0 +1,76 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "models": [
+            "Episode"
+        ],
+        "stores": [
+            "Episodes"
+        ],
+        "views": [
+            "Main",
+            "episodeList",
+            "EpisodeInfo",
+            "Player"
+        ],
+        "controllers": [
+            "EpisodeInfo",
+            "Player"
+        ],
+        "name": "RC"
+    },
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "soundManager.setup({",
+                    "  url: 'swf/',",
+                    "  preferFlash: false,",
+                    "    onready: function() {",
+                    "        console.log('soundmanager ready');",
+                    "    ",
+                    "    }",
+                    "});"
+                ]
+            },
+            "designerId": "86076842-8221-403d-baf8-3017f53921db"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "setSliderValue",
+                "designer|params": [
+                    "position",
+                    "duration"
+                ],
+                "implHandler": [
+                    "var sound = Ext.getCmp('main').sound,",
+                    "    percent = parseInt(Math.floor((100 / sound.duration) * sound.currentTime), 10),",
+                    "    slider = Ext.ComponentQuery.query('#episodeSlider')[0];",
+                    "",
+                    "slider.setValue(percent);",
+                    "//val = (100 / sound.duration) * sound.currentTime || 0;"
+                ]
+            },
+            "designerId": "7fe6fc08-d0fa-488f-992c-c498dfc5e702"
+        }
+    ]
+}

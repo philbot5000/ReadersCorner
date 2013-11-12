@@ -1,0 +1,82 @@
+{
+    "type": "Ext.dataview.List",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "episodeList",
+        "designer|userAlias": "episodelist",
+        "store": "MyJsonStore"
+    },
+    "designerId": "bd58f9df-916f-4b68-8283-b7183a8be660",
+    "cn": [
+        {
+            "type": "Ext.XTemplate",
+            "reference": {
+                "name": "itemTpl",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "implHandler": [
+                    "<img src=\"{Image}\" style=\"margin-right: 5px;\" height=\"75px\" align=\"left\" /><div><b>{Title}</b></div><div style=\"font-size: 0.8em;\">{Description}</div>"
+                ],
+                "designer|displayName": "itemTpl"
+            },
+            "designerId": "10ba3b6e-0041-427d-ac3d-8e074b0847e4"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onListItemTap",
+                "implHandler": [
+                    "var episodeInfo = Ext.create('RC.view.EpisodeInfo'),",
+                    "    main = Ext.getCmp('main'),",
+                    "    episodeTitle = episodeInfo.getComponent('episodeTitle'),",
+                    "    episodeDescription = episodeInfo.getComponent('episodeDescription'),",
+                    "    playButton = Ext.ComponentQuery.query('#playButton')[0];",
+                    "",
+                    "",
+                    "if(record.data === main.episode) {",
+                    "    playButton.setDisabled(true);",
+                    "    playButton.setText('Playing');",
+                    "",
+                    "}",
+                    "playButton.episode = record.data;",
+                    "",
+                    "episodeTitle.setHtml('<b>'+record.data.Title+'</b>');",
+                    "episodeDescription.setHtml('<img src=\"'+record.data.Image+'\" style=\"float:left;margin-right:5px;\" width=\"100px\" />'+record.data.Description);",
+                    "",
+                    "main.add(episodeInfo);",
+                    "episodeInfo.show();",
+                    ""
+                ],
+                "name": "itemtap"
+            },
+            "designerId": "4a89b95b-c6ef-42a9-beb8-026e1387eef9"
+        },
+        {
+            "type": "basiceventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onListInitialize",
+                "implHandler": [
+                    "component.add({xtype: 'component', height: 80, scrollDock: 'bottom'});"
+                ],
+                "name": "initialize"
+            },
+            "designerId": "b90d2bdd-f7a6-4e5a-864d-eefd047d783f"
+        }
+    ]
+}

@@ -1,0 +1,69 @@
+{
+    "type": "Ext.Container",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "height": null,
+        "id": "main",
+        "itemId": "main",
+        "designer|userClassName": "Main",
+        "designer|initialView": true,
+        "layout": "fit"
+    },
+    "designerId": "8d9642e3-a7e7-425e-aef7-17a0a4688c8f",
+    "cn": [
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top",
+                "style": null,
+                "title": "Reader's Corner"
+            },
+            "designerId": "4e864588-619c-4135-a314-afdcd7f04482",
+            "cn": [
+                {
+                    "type": "Ext.Container",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "centered": false,
+                        "hidden": true,
+                        "html": "<img style=\"margin-top: -10px\" src=\"img/bspr.png\" height=\"50px\" />"
+                    },
+                    "designerId": "5ecf5a32-e0f8-48ec-b268-d1822c4a8270"
+                }
+            ]
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "691d6634-3063-4c6e-adcf-70e91a42b441",
+            "masterInstanceId": "bd58f9df-916f-4b68-8283-b7183a8be660"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "designerId": "d361bd2b-d134-45a7-870b-27eb5aa0c197",
+            "masterInstanceId": "e69926a8-a608-4b86-9f00-d06438e26373"
+        }
+    ]
+}

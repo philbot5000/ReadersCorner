@@ -1,0 +1,142 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "centered": true,
+        "height": "60%",
+        "itemId": "episodeInfo",
+        "width": "80%",
+        "designer|userClassName": "EpisodeInfo",
+        "hideOnMaskTap": true,
+        "layout": "vbox",
+        "modal": true,
+        "scrollable": "vertical"
+    },
+    "designerId": "cfe6cbc5-af7b-43e9-98c1-93cea994678c",
+    "cn": [
+        {
+            "type": "Ext.Component",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "episodeTitle",
+                "padding": 10
+            },
+            "designerId": "63fab4b9-96a2-49c0-841e-6e9acc4a29e4"
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "itemId": "episodeDescription",
+                "padding": 10,
+                "masked": null
+            },
+            "designerId": "7b04bc10-3552-4787-a159-b28687918209"
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "bottom",
+                "itemId": "episodeInfoToolbar",
+                "style": "background: url('img/header.png'); background-size: auto 100%;"
+            },
+            "designerId": "9ac863cb-d095-4546-a8a7-706a2cc64f3d",
+            "cn": [
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "aabfe6e1-d36f-47d2-8649-f5c844092fca"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "playButton",
+                        "ui": "confirm",
+                        "text": "Play"
+                    },
+                    "designerId": "0f957860-7586-4622-bf95-589117f7700e"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "openInBrowser",
+                        "margin": 10,
+                        "ui": "action",
+                        "iconCls": null,
+                        "text": "Website"
+                    },
+                    "designerId": "348cd522-111e-49f7-97b7-72242da76e2f",
+                    "cn": [
+                        {
+                            "type": "basiceventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onOpenInBrowserTap",
+                                "name": "tap"
+                            },
+                            "designerId": "bb1cf670-d6ad-4827-a8b0-21833f0c97c4"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "itemId": "closeButton",
+                        "ui": "decline",
+                        "text": "Close"
+                    },
+                    "designerId": "d491b743-616f-4e56-9861-bf02dbab0b16"
+                },
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "designerId": "bf879d7d-0ba6-4140-84d0-9eeca8233f74"
+                }
+            ]
+        }
+    ]
+}

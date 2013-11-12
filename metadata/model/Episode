@@ -1,0 +1,87 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Episode"
+    },
+    "designerId": "7285b05b-5f5d-44c3-a141-070bb7c251c9",
+    "cn": [
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": null,
+                "name": "Title"
+            },
+            "designerId": "5431baf3-0519-49c1-9e65-b33d1fcc8ad9"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Link"
+            },
+            "designerId": "78fb061b-0469-4218-9799-320e722079ef"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Description"
+            },
+            "designerId": "c6530819-1d3f-466b-bc25-c7ed1514d6da"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "pubDate"
+            },
+            "designerId": "dc3b84a2-d04d-4e3b-b588-abc2a0ab3357"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Image"
+            },
+            "designerId": "ef16fdb7-c72b-4f1f-9c50-6579758efdd6"
+        },
+        {
+            "type": "Ext.data.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "Podcast"
+            },
+            "designerId": "5c47d1e9-87a7-4e4e-914e-68966e372f88"
+        }
+    ]
+}

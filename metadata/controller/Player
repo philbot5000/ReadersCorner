@@ -1,0 +1,95 @@
+{
+    "type": "Ext.app.Controller",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Player"
+    },
+    "designerId": "9a97e669-2cb1-4e14-9d2f-6ad74a49af40",
+    "cn": [
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPlayPauseInitialize",
+                "implHandler": [
+                    "var main = Ext.getCmp('main');",
+                    "",
+                    "component.element.on('touchend', function() {",
+                    "",
+                    "",
+                    "    if(main.sound.paused) {",
+                    "",
+                    "        main.sound.play();",
+                    "",
+                    "    } else {",
+                    "",
+                    "        main.sound.pause();",
+                    "    }",
+                    "",
+                    "",
+                    "});"
+                ],
+                "name": "initialize",
+                "designer|targetType": "Ext.Container",
+                "designer|controlQuery": "container#playPause"
+            },
+            "designerId": "bb989dbe-d409-4e99-8bf6-569b6530434f"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEpisodeSliderDrag",
+                "implHandler": [
+                    "var sound = Ext.getCmp('main').sound;",
+                    "",
+                    "sound.removeEventListener('timeupdate', RC.app.setSliderValue, false);",
+                    "",
+                    "newValue = sliderfield.getValue() / (100 / sound.duration);",
+                    "",
+                    "sound.currentTime = newValue;",
+                    ""
+                ],
+                "name": "drag",
+                "designer|targetType": "Ext.field.Slider",
+                "designer|controlQuery": "sliderfield#episodeSlider"
+            },
+            "designerId": "471689e5-0f69-49e9-9404-03ee303838ec"
+        },
+        {
+            "type": "controlleraction",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onEpisodeSliderDragEnd",
+                "implHandler": [
+                    "// reattach listener that sets slider value whileplaying...",
+                    "var sound = Ext.getCmp('main').sound;",
+                    "",
+                    "setTimeout(function() {",
+                    "    sound.addEventListener('timeupdate', RC.app.setSliderValue, false);",
+                    "}, 1000);"
+                ],
+                "name": "dragend",
+                "designer|targetType": "Ext.field.Slider",
+                "designer|controlQuery": "sliderfield#episodeSlider"
+            },
+            "designerId": "c7edf7a7-7fee-4249-9551-b62c0b05ddb4"
+        }
+    ]
+}
